@@ -7,6 +7,14 @@
     - 14.05.2019 ()
 
 2. Issue Tracker
+    xzhuko01:
+        - Implementation of calculator
+    xaghay00:
+        -
+    xtimko01:
+        - Test Driven Development test
+    xaksen00:
+        - Documentation
 
 3. Communication:
     - Trello
