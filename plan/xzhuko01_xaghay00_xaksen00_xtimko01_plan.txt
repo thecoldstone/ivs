@@ -1,0 +1,17 @@
+1. Deadlines
+    - 20.03.2019 (Project plan)
+    ...
+    - 24.04.2019 ()
+    ...
+    - 02.05.2019 ()
+    - 14.05.2019 ()
+
+2. Issue Tracker
+
+3. Communication:
+    - Trello
+    - Slack
+
+4. Selected VSC and hosting for remote repository
+	- VCS: Git.
+	- Hosting: https://github.com/.
