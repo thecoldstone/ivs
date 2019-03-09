@@ -1,45 +1,77 @@
-#Importing necessary package
 import random
+from tkinter import Tk, Label, Button, Entry, StringVar, DISABLED, NORMAL, END, W, E
 
-#Defining pigeonholeAlgo() with the array as the argument
-def pigeonholeAlgo(array):
+class GuessingGame:
+    def __init__(self, master):
+        self.master = master
+        master.title("Guessing Game")
 
-    # Finding the minimum, maximum of array and number of pigeonHoles
-    minA = min(array)
-    maxA = max(array)
-    noOfHoles = maxA - minA + 1
+        self.secret_number = random.randint(1, 100)
+        self.guess = None
+        self.num_guesses = 0
 
-    # Creating pigeonHoles array filled with Zeros
-    pigeonHoles = [0] * noOfHoles
+        self.message = "Guess a number from 1 to 100"
+        self.label_text = StringVar()
+        self.label_text.set(self.message)
+        self.label = Label(master, textvariable=self.label_text)
 
-    # Iterate through unsorted array and add 1 to pigeonHoles array's
-    # value at the index corresponding to unsorted array's value
-    for element in array:
-        pigeonHoles[element - minA] += 1
+        vcmd = master.register(self.validate) # we have to wrap the command
+        self.entry = Entry(master, validate="key", validatecommand=(vcmd, '%P'))
 
-    # Putting the elements back into array in sorted order
-    i = 0
-    for count in range(noOfHoles):
-        while pigeonHoles[count] > 0:
-            pigeonHoles[count] -= 1
-            array[i] = count + minA
-            i += 1
+        self.guess_button = Button(master, text="Guess", command=self.guess_number)
+        self.reset_button = Button(master, text="Play again", command=self.reset, state=DISABLED)
 
-# Driver Code
-if __name__ == '__main__':
+        self.label.grid(row=0, column=0, columnspan=2, sticky=W+E)
+        self.entry.grid(row=1, column=0, columnspan=2, sticky=W+E)
+        self.guess_button.grid(row=2, column=0)
+        self.reset_button.grid(row=2, column=1)
 
-    # Generate an array of 15 numbers upto the range of 20
-    randomArray = random.sample(range(20), 15)
+    def validate(self, new_text):
+        if not new_text: # the field is being cleared
+            self.guess = None
+            return True
 
-    # Printing the unsorted array
-    print("\nBEFORE SORTING : ", end=' ')
-    for i in range(len(randomArray)):
-        print(randomArray[i], end=' ')
+        try:
+            guess = int(new_text)
+            if 1 <= guess <= 100:
+                self.guess = guess
+                return True
+            else:
+                return False
+        except ValueError:
+            return False
 
-    # Calling pigeonholeAlgo()
-    pigeonholeAlgo(randomArray)
+    def guess_number(self):
+        self.num_guesses += 1
 
-    # Printing the sorted array
-    print("\n\nSORTED ARRAY : ", end=' ')
-    for i in range(len(randomArray)):
-        print(randomArray[i], end=' ')
+        if self.guess is None:
+            self.message = "Guess a number from 1 to 100"
+
+        elif self.guess == self.secret_number:
+            suffix = '' if self.num_guesses == 1 else 'es'
+            self.message = "Congratulations! You guessed the number after %d guess%s." % (self.num_guesses, suffix)
+            self.guess_button.configure(state=DISABLED)
+            self.reset_button.configure(state=NORMAL)
+
+        elif self.guess < self.secret_number:
+            self.message = "Too low! Guess again!"
+        else:
+            self.message = "Too high! Guess again!"
+
+        self.label_text.set(self.message)
+
+    def reset(self):
+        self.entry.delete(0, END)
+        self.secret_number = random.randint(1, 100)
+        self.guess = 0
+        self.num_guesses = 0
+
+        self.message = "Guess a number from 1 to 100"
+        self.label_text.set(self.message)
+
+        self.guess_button.configure(state=NORMAL)
+        self.reset_button.configure(state=DISABLED)
+
+root = Tk()
+my_gui = GuessingGame(root)
+root.mainloop()
