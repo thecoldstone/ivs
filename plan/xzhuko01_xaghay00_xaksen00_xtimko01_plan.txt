@@ -2,6 +2,7 @@
     - 16.03.2019 (Initialize git repository, Create communication lines)
     - 20.03.2019 (Project plan)
     - 22.03.2019 (Create readme file)
+    - 22.03.2019 (Create readme file)
     - 24.04.2019 ()
     ...
     - 02.05.2019 ()
@@ -10,8 +11,7 @@
 2. Areas of responsibility
     xtimko01:
         - Test Driven Development tests
-        - Final testing of
-
+        - Final testing of ready application
     xzhuko01:
         - Implementation of calculator
             Design architecture
