@@ -1,11 +1,13 @@
 1. Deadlines
-    - 16.03.2019 (Initialize git repository, Create communication lines)
-    -
-    - 20.03.2019 (Project plan)
-    - 22.03.2019 (Create readme file)
+    - 16.02.2019 (Initialize git repository, Create communication lines)
+    - 16.02.2019 (Choose the programming language(C++) and GUI)
+    - 16.02.2019 (Divide the areas of responsibility and decompose the problem)
+    - 17.03.2019 (Create TDD tests for math calculation)
+    - 20.03.2019 (Submit the project plan)
+    - 22.03.2019 (Create the Readme file)
     - 24.04.2019 ()
     ...
-    - 02.05.2019 ()
+    - 02.05.2019 (Submit the list of problems which )
     - 14.05.2019 (Deadline)
 
 2. Areas of responsibility
@@ -17,11 +19,14 @@
             Design architecture
             Implement functions from TDD
             Create interface
+            Creat the MockUp
     xaghay00:
         - GUI interface
             Find GUI library/framework
             Write GUI code
             Integrate with core interface
+            Creat interface
+            Creat the MockUp
     xaksen00:
         - Documentation
             Generate from code
@@ -31,7 +36,10 @@
 3. Communication
     - Trello
     - Slack
+    - Messenger
 
 4. Selected VSC and hosting for remote repository
 	- VCS: Git.
 	- Hosting: https://github.com/.
+	- Our repository is https://github.com/thecoldstone/ivs.git
+
