@@ -1,5 +1,5 @@
 from tkinter import *
-from main import *
+from src.main import *
 
 class Calculator:
     def __init__(self, master):
