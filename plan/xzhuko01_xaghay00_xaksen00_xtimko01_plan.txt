@@ -1,14 +1,16 @@
 1. Deadlines
     - 16.02.2019 (Initialize git repository, Create communication lines)
-    - 16.02.2019 (Choose the programming language(Python) and GUI)
+    - 16.02.2019 (Choose the programming language and GUI framework)
     - 16.02.2019 (Divide the areas of responsibility and decompose the problem)
     - 20.03.2019 (Submit the project plan)
     - 22.03.2019 (Create TDD tests for math calculation)
     - 23.03.2019 (Create Readme file)
-    - 24.03.2019 (Create GUI, MockUp)
+    - 23.03.2019 (Design MockUp)
+    - 10.04.2019 (Write core code)
+    - 11.04.2019 (Create GUI, integrate with core API)
     - 24.04.2019 (Submit the final version of the project)
     - 02.05.2019 (Submit the list of problems)
-    - 14.05.2019 (Defence)
+    - 14.05.2019 (Presentation)
 
 2. Areas of responsibility
     xtimko01:
@@ -18,15 +20,13 @@
         - Implementation of calculator
             Design architecture
             Implement functions from TDD
-            Create interface
-            Create the MockUp
+            Create API
     xaghay00:
         - GUI interface
             Find GUI library/framework
+            Design the MockUp
             Write GUI code
             Integrate with core interface
-            Create interface
-            Create the MockUp
     xaksen00:
         - Documentation
             Generate from code
@@ -36,7 +36,7 @@
 3. Communication
     - Trello
     - Slack
-    - Messenger
+    - Facebook Messenger
 
 4. Selected VSC and hosting for remote repository
 	- VCS: Git.
