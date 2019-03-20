@@ -8,6 +8,8 @@
     - 23.03.2019 (Design MockUp)
     - 10.04.2019 (Write core code)
     - 11.04.2019 (Create GUI, integrate with core API)
+    - 15.04.2019 (Profiling)
+    - 20.04.2019 (Installator)
     - 24.04.2019 (Submit the final version of the project)
     - 02.05.2019 (Submit the list of problems)
     - 14.05.2019 (Presentation)
@@ -32,6 +34,8 @@
             Generate from code
             Create user documentation
         - Code review
+	- Profiling
+	- Installator
 
 3. Communication
     - Trello
