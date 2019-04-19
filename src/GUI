@@ -46,13 +46,13 @@ class GradientFrame(tk.Canvas):
         self.lower("gradient")
 
 if __name__ == "__main__":
-    root = tk.Tk()#hello
+    root = tk.Tk()
     Example(root).pack(fill="both", expand=True)
     root.title("Calculator")
     root.geometry("600x600")
     helv40 = font.Font(family='Arial', size=16, weight='bold')
     calc_entry = Entry(root, width=97)
-    calc_entry.place(relx=0.01, rely=0.01, height=100)
+    calc_entry.place(relx=0.01, rely=0.01,height=100)
 
     B = tk.Button(text="0")          #,bg=PickColor())
     B['font'] = font.Font(family='Arial', size=16, weight='bold')
