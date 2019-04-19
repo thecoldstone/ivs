@@ -24,8 +24,3 @@ class Math(object):
 
     def Square(a, b):
         return math.pow(a,1./b)
-
-class Calculation(object):
-
-
-

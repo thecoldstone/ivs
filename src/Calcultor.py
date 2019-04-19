@@ -99,9 +99,38 @@ for i in bttn_list:
 
 
 def calc(key):
-    #Calc().insertNumber()
-    global memory
-    if key == "=":
+
+    number1 = none
+    number2 = none
+    operation = none
+
+    while 1:
+
+        if (number1 == none):
+
+            while key.isdigit():
+
+                number1 = number1 + key
+
+        if (number1 != none):
+
+            if key == "+":
+                operation = "add"
+            elif key == "-":
+                operation = "sub"
+        if (number 2 == none):
+
+            while key.isdigit():
+
+                number2 = number2 + key
+
+        if key == "=":
+            if  operation = add:
+                add(number1,number2)
+
+
+            '''
+            
         # исключение написания слов
         str1 = "-+0123456789.*/)("
         if calc_entry.get()[0] not in str1:
@@ -140,6 +169,16 @@ def calc(key):
         if "=" in calc_entry.get():
             calc_entry.delete(0, END)
         calc_entry.insert(END, key)
+
+            '''
+
+    #Calc().insertNumber()
+    global memory
+    if key == "=":
+
+
+
+
 
 
 

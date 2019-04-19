@@ -4,8 +4,8 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 import sys
-from src.Core import *
-from src.Core import Math
+from src.Math import Math
+
 import math
 
 #calcInstance = Calc()
@@ -95,48 +95,31 @@ for i in bttn_list:
 # логика калькулятора
 
 def calc(key):
-    #Calc().insertNumber()
-    #global memory
-    if key == "=":
-        # исключение написания слов
-        str1 = "-+0123456789.*/)("
-        if calc_entry.get()[0] not in str1:
-            calc_entry.insert(END, "First symbol is not number!")
-            messagebox.showerror("Error!", "You did not enter the number!")
-        # исчисления
-        try:
-            result = eval(calc_entry.get())
-            calc_entry.insert(END, "=" + str(result))
-        except:
-            calc_entry.insert(END, "Error!")
-            messagebox.showerror("Error!", "Check the correctness of data")
-    # очищение поля ввода
-    elif key == "Clean":
-        calc_entry.delete(0, END)
-    elif key == "п":
-        calc_entry.insert(END, Math.PiNumber())
-    elif key == "Exit":
-        gui.after(1, gui.destroy)
-        sys.exit()
-    elif key == "xⁿ":
-        calc_entry.insert(INSERT, "**")
-    elif key == "sin":
-        calc_entry.insert(END, "=" + str(math.sin(int(calc_entry.get()))))
-    elif key == "cos":
-        calc_entry.insert(END, "=" + str(math.cos(int(calc_entry.get()))))
-    elif key == "(":
-        calc_entry.insert(END, "(")
-    elif key == ")":
-        calc_entry.insert(END, ")")
-    elif key == "n!":
-        calc_entry.insert(END, "=" + str(math.factorial(int(calc_entry.get()))))
-    elif key == "√x":
-        calc_entry.insert(END, "=" + str(math.sqrt(int(calc_entry.get()))))
-    else:
-        if "=" in calc_entry.get():
-            calc_entry.delete(0, END)
-        calc_entry.insert(END, key)
+    number1 = None
+    number2 = None
+    operation = None
 
+    while ( key != "Exit" ):
+
+            if (number1 == None):
+
+                while key.isdigit():
+                    number1 = number1 + key
+
+            if (number1 != None):
+
+                if key == "+":
+                    operation = "add"
+                elif key == "-":
+                    operation = "sub"
+            if (number2 == None):
+
+                while key.isdigit():
+                    number2 = number2 + key
+
+            if key == "=":
+                if operation == "add":
+                    Math.Add(number1, number2)
 
 
 gui.mainloop()
