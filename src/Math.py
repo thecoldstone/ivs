@@ -1,10 +1,10 @@
 import math
 
 class Math(object):
-    def Plus(a, b):
+    def Add(a, b):
         return a + b
 
-    def Minus(a, b):
+    def Sub(a, b):
         return a - b
 
     def Abs(a):
