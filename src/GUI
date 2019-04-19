@@ -1,0 +1,136 @@
+#!/usr/bin/python
+import tkinter as tk    # py3
+from src.colorsforcalc import *
+from tkinter import *
+from tkinter import  font
+
+from tkinter import font
+import tkinter.font as ass
+
+import tkinter
+class Example(tk.Frame):
+
+    def __init__(self, parent):
+        tk.Frame.__init__(self, parent)
+        f1 = GradientFrame(self, borderwidth=1, relief="sunken")
+        f1.pack(side="top", fill="both", expand=True)
+
+
+class GradientFrame(tk.Canvas):
+    '''A gradient frame which uses a canvas to draw the background'''
+    def __init__(self, parent, **kwargs):
+        colors = PickColors()
+        tk.Canvas.__init__(self, parent, **kwargs)
+        self._color1 = colors[0]
+        self._color2 = colors[1]
+        self.bind("<Configure>", self._draw_gradient)
+
+    def _draw_gradient(self, event=None):
+        '''Draw the gradient'''
+        self.delete("gradient")
+        width = self.winfo_width()
+        height = self.winfo_height()
+        limit = width
+        (r1,g1,b1) = self.winfo_rgb(self._color1)
+        (r2,g2,b2) = self.winfo_rgb(self._color2)
+        r_ratio = float(r2-r1) / limit
+        g_ratio = float(g2-g1) / limit
+        b_ratio = float(b2-b1) / limit
+
+        for i in range(limit):
+            nr = int(r1 + (r_ratio * i))
+            ng = int(g1 + (g_ratio * i))
+            nb = int(b1 + (b_ratio * i))
+            color = "#%4.4x%4.4x%4.4x" % (nr,ng,nb)
+            self.create_line(i,0,i,2000, tags=("gradient",), fill=color)
+        self.lower("gradient")
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    Example(root).pack(fill="both", expand=True)
+    root.title("Calculator")
+    root.geometry("600x600")
+    helv40 = font.Font(family='Arial', size=16, weight='bold')
+    calc_entry = Entry(root, width=97)
+    calc_entry.place(relx=0.01, rely=0.01, height=100)
+
+    B = tk.Button(text="0")          #,bg=PickColor())
+    B['font'] = font.Font(family='Arial', size=16, weight='bold')
+    B.pack()
+    B.place(height=50, width=300, relx=0.235, rely=0.96, anchor=CENTER)
+
+    B = tk.Button(text=",")
+    B['font'] = font.Font(family='Arial', size=16, weight='bold')
+    B.pack()
+    B.place(height=50, width=150, relx=0.62, rely=0.96, anchor=CENTER)
+
+    B = tk.Button(text="1")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150,relx=0.1, rely=0.87,anchor=CENTER)
+
+    B = tk.Button(text="2")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150, relx=0.36, rely=0.87, anchor=CENTER)
+
+    B = tk.Button(text="3")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150, relx=0.62, rely=0.87, anchor=CENTER)
+
+    B = tk.Button(text="4")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150, relx=0.1, rely=0.78, anchor=CENTER)
+
+    B = tk.Button(text="5")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150, relx=0.36, rely=0.78, anchor=CENTER)
+
+    B = tk.Button(text="6")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150, relx=0.62, rely=0.78, anchor=CENTER)
+
+    B = tk.Button(text="7")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150, relx=0.1, rely=0.69, anchor=CENTER)
+
+    B = tk.Button(text="8")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150, relx=0.36, rely=0.69, anchor=CENTER)
+
+    B = tk.Button(text="9")
+    B['font'] = helv40
+    B.pack()
+    B.place(height=50, width=150, relx=0.62, rely=0.69, anchor=CENTER)
+
+    B = tk.Button(text="+")
+    B['font'] = font.Font(family='Arial', size=20, weight='bold')
+    B.pack()
+    B.place(height=75, width=144, relx=0.87, rely=0.94, anchor=CENTER)
+
+    B = tk.Button(text="–")
+    B['font'] = font.Font(family='Arial', size=20, weight='bold')
+    B.pack()
+    B.place(height=75, width=144, relx=0.87, rely=0.80, anchor=CENTER)
+
+    B = tk.Button(text="*")
+    B['font'] = font.Font(family='Arial', size=24, weight='bold')
+    B.pack()
+    B.place(height=75, width=144, relx=0.87, rely=0.66, anchor=CENTER)
+
+    B = tk.Button(text="÷")
+    B['font'] = font.Font(family='Arial', size=20, weight='bold')
+    B.pack()
+    B.place(height=75, width=144, relx=0.87, rely=0.52, anchor=CENTER)
+
+
+
+
+
+    root.mainloop()
