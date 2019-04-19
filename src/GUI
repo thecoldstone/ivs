@@ -59,14 +59,14 @@ if __name__ == "__main__":
     root.geometry("600x600")
 
     helv40 = font.Font(family='Arial', size=16, weight='bold')
-    calc_entry = Entry(root,  width=1000)
-    calc_entry.place(relx=-0.0001, rely=0.01,height=100)
+    calc_entry = Entry(root, bg="white", font="Arial")
+    calc_entry.place(relx=0.01, rely=0.01,relheight=0.1, relwidth=0.98)
    # Entry.font(family='Arial', size=16, weight='bold')
 
     bttn_list = [
         "7", "8", "9", "+",
         "4", "5", "6", "-",
-        "1", "2", "3", "/",
+        "1", "2", "3", "÷",
         "√x", "xⁿ", "0", "=",
         "sin", "cos", ".", "n!",
         "(", ")", "п", "Clean",
@@ -148,30 +148,37 @@ if __name__ == "__main__":
     B.pack()
     B.place(height=75, width=144, relx=0.87, rely=0.52, anchor=CENTER)
     '''
+    root.wm_iconbitmap('myicon.ico')
+    root.wm_title('Title')
     for i in bttn_list:
         cmd = lambda x=i:calc(x)
         if i == '1':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=0, y=535, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.0, rely=0.895,  relwidth=0.23, relheight=0.1)
         if i == '2':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=143,y=535, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.240,rely=0.895,  relwidth=0.23, relheight=0.1)
         if i == '3':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=286,y=535, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.480,rely=0.895, relwidth=0.23, relheight=0.1)
         if i == '4':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=0,y=470, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.0,rely=0.790, relwidth=0.23, relheight=0.1)
         if i == '5':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=143,y=470, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.240,rely=0.790, relwidth=0.23, relheight=0.1)
         if i == '6':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=286,y=470, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.480,rely=0.790,relwidth=0.23, relheight=0.1)
         if i == '7':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=0,y=405, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.0,rely=0.685,relwidth=0.23, relheight=0.1)
         if i == '8':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=143,y=405, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.240,rely=0.685, relwidth=0.23, relheight=0.1)
         if i == '9':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=286,y=405, height=0.9, width=0.9, relwidth=0.23, relheight=0.1)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.480,rely=0.685, relwidth=0.23, relheight=0.1)
         if i == '=':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=429,y=470, height=0.9, width=0.9, relwidth=0.275, relheight=0.2099)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.715,rely=0.790, relwidth=0.275, relheight=0.204)
         if i == '+':
-            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(x=429,y=340, height=0.9, width=0.9, relwidth=0.275, relheight=0.2099)
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.715,rely=0.580,relwidth=0.275, relheight=0.204)
+        if i == '*':
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.715,rely=0.370,relwidth=0.275, relheight=0.204)
+        if i == '÷':
+            B = tk.Button(root, bg="white", text=i, font='Arial', command=cmd, width=1).place(relx=0.715,rely=0.160,relwidth=0.275, relheight=0.204)
+
     def calc(key):
         # очищение поля ввода
         if key == "Clean":
