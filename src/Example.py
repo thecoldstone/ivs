@@ -3,21 +3,17 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
-import math
 import sys
-from src.GUI import *
+from src.Math import Math
 
+import math
 
 #calcInstance = Calc()
-
-
-
 
 gui = Tk()
 gui.title("Calculator")
 gui.configure(background="red")
 gui.geometry("583x227")
-
 
 bttn_list = [
     "7", "8", "9", "+",
@@ -29,6 +25,7 @@ bttn_list = [
     "Exit", "*",
 
 ]
+
 calc_entry = Entry(gui, width=103)
 calc_entry.grid(row=0, column=0, columnspan=50)
 
@@ -97,89 +94,32 @@ for i in bttn_list:
         Button(gui, text=i, command=cmd, fg='black', bg='white', width=40).grid(row=7, column=2, columnspan=2)
 # логика калькулятора
 
-
 def calc(key):
+    number1 = None
+    number2 = None
+    operation = None
 
-    number1 = none
-    number2 = none
-    operation = none
+    while ( key != "Exit" ):
 
-    while 1:
+            if (number1 == None):
 
-        if (number1 == none):
+                while key.isdigit():
+                    number1 = number1 + key
 
-            while key.isdigit():
+            if (number1 != None):
 
-                number1 = number1 + key
+                if key == "+":
+                    operation = "add"
+                elif key == "-":
+                    operation = "sub"
+            if (number2 == None):
 
-        if (number1 != none):
+                while key.isdigit():
+                    number2 = number2 + key
 
-            if key == "+":
-                operation = "add"
-            elif key == "-":
-                operation = "sub"
-        if (number 2 == none):
-
-            while key.isdigit():
-
-                number2 = number2 + key
-
-        if key == "=":
-            if  operation = add:
-                add(number1,number2)
-
-
-            '''
-            
-        # исключение написания слов
-        str1 = "-+0123456789.*/)("
-        if calc_entry.get()[0] not in str1:
-            calc_entry.insert(END, "First symbol is not number!")
-            messagebox.showerror("Error!", "You did not enter the number!")
-        # исчисления
-        try:
-            result = eval(calc_entry.get())
-            calc_entry.insert(END, "=" + str(result))
-        except:
-            calc_entry.insert(END, "Error!")
-            messagebox.showerror("Error!", "Check the correctness of data")
-    # очищение поля ввода
-    elif key == "Clean":
-        calc_entry.delete(0, END)
-    elif key == "п":
-        calc_entry.insert(END, math.pi)
-    elif key == "Exit":
-        gui.after(1, gui.destroy)
-        sys.exit()
-    elif key == "xⁿ":
-        calc_entry.insert(INSERT, "**")
-    elif key == "sin":
-        calc_entry.insert(END, "=" + str(math.sin(int(calc_entry.get()))))
-    elif key == "cos":
-        calc_entry.insert(END, "=" + str(math.cos(int(calc_entry.get()))))
-    elif key == "(":
-        calc_entry.insert(END, "(")
-    elif key == ")":
-        calc_entry.insert(END, ")")
-    elif key == "n!":
-        calc_entry.insert(END, "=" + str(math.factorial(int(calc_entry.get()))))
-    elif key == "√x":
-        calc_entry.insert(END, "=" + str(math.sqrt(int(calc_entry.get()))))
-    else:
-        if "=" in calc_entry.get():
-            calc_entry.delete(0, END)
-        calc_entry.insert(END, key)
-
-            '''
-
-    #Calc().insertNumber()
-    global memory
-    if key == "=":
-
-
-
-
-
+            if key == "=":
+                if operation == "add":
+                    Math.Add(number1, number2)
 
 
 gui.mainloop()
