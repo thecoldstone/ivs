@@ -46,7 +46,7 @@ class GradientFrame(tk.Canvas):
         self.lower("gradient")
 
 if __name__ == "__main__":
-    root = tk.Tk()
+    root = tk.Tk()#hello
     Example(root).pack(fill="both", expand=True)
     root.title("Calculator")
     root.geometry("600x600")
