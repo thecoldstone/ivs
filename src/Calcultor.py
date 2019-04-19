@@ -5,7 +5,7 @@ from tkinter import messagebox
 from tkinter import ttk
 import math
 import sys
-
+from src.GUI import *
 
 
 #calcInstance = Calc()
