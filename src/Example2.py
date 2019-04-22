@@ -140,7 +140,6 @@ if __name__ == "__main__":
 
         # очищение поля ввода
         if key == "⌫":
-            memory.pop(len(memory) - 1)
             equation = equation[:-1]
             calc_entry.delete(len(calc_entry.get())-1, tk.END)
         elif key == 'Clean':
@@ -155,31 +154,31 @@ if __name__ == "__main__":
         elif key == "√x":
             calc_entry.insert(END, "=" + str(math.sqrt(int(calc_entry.get()))))
         elif key == "+" or key == "-" or key == "*" or key =="÷" or key == "ABS" or key == "n!":
+            operation = ''
+            operation = operation + key
             memory.append(equation)
             equation = ''
             calc_entry.delete(0, END)
-            operation = operation + key
         elif key == "=":
             calc_entry.delete(0, END)
-            calc_entry.insert(END, str((calc(memory, operation))))
+            memory[0] = (calc(int(memory[0]), operation))
+            calc_entry.insert(END, str(memory[0]))
 
     def calc(eq, ops):
-        result = int(memory[0])
 
         if ops == "-":
-            result = Math.Sub(result, int(equation))
+            return Math.Sub(eq, int(equation))
         if ops == "+":
-            result = Math.Add(result, int(equation))
+            return Math.Add(eq, int(equation))
         if ops == "*":
-            result = Math.Multiply(result, equation)
+            return Math.Multiply(eq, int(equation))
         if ops == "÷":
-            result = Math.Divison(result, equation)
+            return Math.Divison(eq, int(equation))
         if ops == "ABS":
-            result = Math.Abs(result)
+            return Math.Abs(eq)
         if ops == "n!":
-            result = Math.Factorial(result)
+            return Math.Factorial(eq)
 
-        return result
 
 
     root.mainloop()
