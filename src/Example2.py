@@ -151,9 +151,7 @@ if __name__ == "__main__":
             calc_entry.insert(INSERT, "**")
         elif key == ",":
             calc_entry.insert(END, ",")
-        elif key == "√x":
-            calc_entry.insert(END, "=" + str(math.sqrt(int(calc_entry.get()))))
-        elif key == "+" or key == "-" or key == "*" or key =="÷" or key == "ABS" or key == "n!":
+        elif key == "+" or key == "-" or key == "*" or key =="÷" or key == "ABS" or key == "n!" or key == "√x":
             operation = ''
             operation = operation + key
             memory.append(equation)
@@ -178,6 +176,8 @@ if __name__ == "__main__":
             return Math.Abs(eq)
         if ops == "n!":
             return Math.Factorial(eq)
+        if ops == "√x":
+            return Math.Square(eq, int(equation))
 
 
 
