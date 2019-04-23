@@ -19,4 +19,4 @@ The simple calculator
 
 ### License ###
 
-    
+    The project is licensed by GNU version 3
