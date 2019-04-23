@@ -1,4 +1,4 @@
-import tkinter as tk  # py3
+import tkinter as tk
 from tkinter import font
 
 
@@ -8,7 +8,7 @@ def create_buttons(root, callback):
         "4", "5", "6", "-",
         "1", "2", "3", "÷",
         "√x", "xⁿ", "0", "=",
-        ".", "n!", "(", ")", "⌫",
+        ".", "n!", "+/-", "⌫",
         "ABS", "Clean", "Exit", "*",
     ]:
         render_button(button, lambda key=button: callback(key), root)
@@ -58,7 +58,7 @@ def render_button(key, callback, root):
         new_button().place(relx=0.240, rely=0.475, relwidth=0.23, relheight=0.1)
     elif key == "n!":
         new_button().place(relx=0.480, rely=0.475, relwidth=0.23, relheight=0.1)
-    elif key == "(":
+    elif key == "+/-":
         new_button().place(relx=0.0, rely=0.370, relwidth=0.23, relheight=0.1)
     elif key == "ABS":
         new_button().place(relx=0.240, rely=0.370, relwidth=0.23, relheight=0.1)

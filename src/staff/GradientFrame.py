@@ -1,6 +1,8 @@
-import tkinter as tk  # py3
+import tkinter as tk
 
 from src.staff.pick_colors import pick_colors
+
+# Check that link for more information https://stackoverflow.com/a/26182241/9714136
 
 
 class GradientFrame(tk.Canvas):
