@@ -10,7 +10,7 @@ def sub(a, b):
 
 
 def absolute(a):
-    return math.fabs(a)
+    return abs(a)
 
 
 def division(a, b):
