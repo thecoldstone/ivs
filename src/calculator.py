@@ -20,7 +20,6 @@ if __name__ == "__main__":
             equation += key
             entry_input.insert(END, key)
 
-        # очищение поля ввода
         if key == "⌫":
             equation = equation[:-1]
             entry_input.delete(len(entry_input.get()) - 1, tk.END)
@@ -29,16 +28,21 @@ if __name__ == "__main__":
             equation = ""
             operation = ""
             entry_input.delete(0, END)
-        elif key == "xⁿ":
-            entry_input.insert(INSERT, "**")
+        #elif key == "xⁿ":
+            #entry_input.insert(INSERT, "**")
         elif key == "√x":
             entry_input.insert(END, "=" + str(math_api.sqrt(Decimal(entry_input.get()))))
-        elif key == "+" or key == "-" or key == "*" or key == "÷" or key == "ABS" or key == "n!":
+        elif key == "+" or key == "-" or key == "*" or key == "÷" or key == "ABS" or key == "n!" or key == "xⁿ":
             operation = ""
             operation = operation + key
             memory.append(equation)
             equation = ""
             entry_input.delete(0, END)
+
+            #if operation == "n!":
+             #   memory[0] = entry_input.insert(END, calculate(Decimal(memory[0]), operation))
+              #  entry_input.insert(END, str(memory[0]))
+
         elif key == "=":
             entry_input.delete(0, END)
             memory[0] = calculate(Decimal(memory[0]), operation)
@@ -58,6 +62,8 @@ if __name__ == "__main__":
             return math_api.absolute(eq)
         if operator == "n!":
             return math_api.factorial(eq)
+        if operator == "xⁿ":
+            return math_api.power(eq, Decimal(equation))
 
 
     root = create_root()
