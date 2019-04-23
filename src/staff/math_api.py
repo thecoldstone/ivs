@@ -13,7 +13,7 @@ def absolute(a):
     return abs(a)
 
 
-def division(a, b):
+def divide(a, b):
     return a / b
 
 
