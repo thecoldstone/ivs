@@ -7,4 +7,4 @@ def create_entry(root):
     entry_input = tk.Entry(root, font=helv20, bg="white")
     entry_input.place(relx=0.01, rely=0.01, relheight=0.1, relwidth=0.98)
 
-    return  entry_input
+    return entry_input
