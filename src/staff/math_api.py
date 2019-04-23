@@ -14,7 +14,10 @@ def absolute(a):
 
 
 def divide(a, b):
-    return a / b
+    if b == 0:
+        return 'nan'
+    else:
+        return a / b
 
 
 def multiply(a, b):
