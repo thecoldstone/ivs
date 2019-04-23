@@ -2,6 +2,10 @@
 
 The simple calculator
 
+### Platforms
+    
+    Windows 64-bit
+
 ### Name of a team ###
 
 
