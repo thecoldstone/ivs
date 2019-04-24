@@ -1,0 +1,2 @@
+For us was really difficult to create a proper math lab which will work correctly with our GUI.
+GUI was totally the easiest part in our project.
