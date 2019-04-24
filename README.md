@@ -24,3 +24,7 @@ The simple calculator
 ### License ###
 
     The project is licensed by GNU version 3
+    
+### Profiling ###
+
+    To make profiling, run "python -m cProfile -o output.profile src/Standard deviation.py < data.text && echo 'stats' | python3 -m pstats output.profile" 
