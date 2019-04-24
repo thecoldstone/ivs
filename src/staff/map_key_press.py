@@ -30,13 +30,16 @@ def map_key_press(key, state):
         state.op_power()
 
     elif key == "√x":
-        state.op_sqrt()
+        state.op_root()
 
     elif key == "ABS":
         state.op_absolute()
 
     elif key == "n!":
         state.op_factorial()
+
+    elif key == "+/-":
+        state.op_sign_switch()
 
     elif key == "=":
         state.op_equal()

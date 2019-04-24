@@ -1,4 +1,5 @@
 import math
+from decimal import Decimal
 
 
 def add(a, b):
@@ -29,12 +30,8 @@ def factorial(a):
 
 
 def power(a, b):
-    return math.pow(a, b)
+    return math.pow(Decimal(a), Decimal(b))
 
 
-def square(a, b):
-    return math.pow(a, 1. / b)
-
-
-def sqrt(a):
-    return math.sqrt(a)
+def root(a, b):
+    return math.pow(Decimal(a), Decimal(1.0) / b)

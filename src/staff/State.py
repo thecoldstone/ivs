@@ -57,26 +57,17 @@ class State:
     def op_power(self):
         self.prepare_binary_operation(math_api.power)
 
-    def op_sqrt(self):  # TODO: some odd shit is needed here
-        if not self._left_operand == 0:
-            self.calculate()
-        self._operator = lambda left, right: math_api.sqrt(left)
-        self.copy_right_slot()
-        self._operator_just_used = True
+    def op_root(self):
+        self.prepare_binary_operation(math_api.root)
 
-    def op_absolute(self):  # TODO: some odd shit is needed here
-        if not self._left_operand == 0:
-            self.calculate()
-        self._operator = lambda left, right: math_api.absolute(left)
-        self.copy_right_slot()
-        self._operator_just_used = True
+    def op_absolute(self):
+        self.prepare_unary_operation(lambda _, number: math_api.absolute(number))
 
-    def op_factorial(self):  # TODO: some odd shit is needed here
-        if not self._left_operand == 0:
-            self.calculate()
-        self._operator = lambda left, right: math_api.factorial(left)
-        self.copy_right_slot()
-        self._operator_just_used = True
+    def op_factorial(self):
+        self.prepare_unary_operation(lambda _, number: math_api.factorial(number))
+
+    def op_sign_switch(self):
+        self.prepare_unary_operation(lambda _, number: -number)
 
     def op_equal(self):
         if self._operator is not None:
@@ -108,5 +99,11 @@ class State:
         if not (self._left_operand == 0 or self._operator_just_used):
             self.calculate()
         self._operator = operation
+        self.copy_right_slot()
+        self._operator_just_used = True
+
+    def prepare_unary_operation(self, operation):
+        self._operator = operation
+        self.calculate()
         self.copy_right_slot()
         self._operator_just_used = True
