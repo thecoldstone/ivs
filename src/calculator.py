@@ -23,9 +23,13 @@ from src.staff.map_key_press import map_key_press
 from src.staff.root import create_root
 
 
-root = create_root()
-state = State(create_entry(root))
+def run():
+    root = create_root()
+    state = State(create_entry(root))
 
-create_buttons(root, lambda key: map_key_press(key, state))
+    create_buttons(root, lambda key: map_key_press(key, state))
 
-root.mainloop()
+    root.mainloop()
+
+
+run()
